@@ -16,3 +16,7 @@ const textOut = `This is what we know about the avocado: ${textIn}.\nCreated on 
 // Now write it out
 fs.writeFileSync('./txt/output.txt', textOut);
 console.log('File written!');
+
+// However, some of the processes can be slow. Therefore, we need to rely on asynchronous process
+// to help us to accomplish tasks simotaneously.
+// And asynchronous function utilizes a call-back function to achieve such efficiency.
