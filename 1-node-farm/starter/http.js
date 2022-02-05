@@ -1,8 +1,10 @@
 const fs = require('fs');
 const http = require('http');
+const url = require('url');
 
 const server = http.createServer((req, res) => {
-    console.log(req);
+    // console.log(req); # To see the request header information
+    console.log(req.url);
     res.end('200');
 });
 
