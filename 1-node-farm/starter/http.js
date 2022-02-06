@@ -10,11 +10,15 @@ const server = http.createServer((req, res) => {
     
     if(pathName == '/' || pathName == '/overview') {
         res.end('This is the overview.');
-    } else if (pathName == '/product') {
-        res.end('This is the product.');
+    } else if (pathName == '/healthz') {
+        res.writeHead(200);
+        res.end('This is the healthz.');
     } else {
         // Respond with the 404 HTTP code
-        res.writeHead(404);
+        // res.writeHead(404);     // If you decide not to add stuff
+        res.writeHead(404, {
+            'Content-type': 'text/html'
+        });
         res.end('Page not found.');
     };
     
